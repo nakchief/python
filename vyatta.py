@@ -5,6 +5,7 @@ vyatta_ip = '192.168.123.90'
 auth=('username', 'password')
 headers = {'Accept': 'application/json' , 'Vyatta-Specification-Version': '0.1' }
 delimiter = "##############################"
+id = ""
 def start():
 	print (delimiter)
 	print ("Connecting to Vyatta")
@@ -17,9 +18,6 @@ def start():
 	print ("Connection is established")
 	print (delimiter)
 	return id
-
-id = start()
-
 
 def get_ip_file(file_path):
 	list_ip = []
@@ -58,6 +56,8 @@ def get_ip_url(url):
 
 
 def add_ip(list_ip,group_ip):
+	global id
+        id = start()
 	start_time = time.time()
 	print ("Adding IP List to Vyatta address-group %s is processing.\nPlease wait!" %(group_ip))
 	for ip in list_ip:
