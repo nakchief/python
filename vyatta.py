@@ -2,7 +2,7 @@ import  urllib2, time, warnings,argparse,sys
 import requests, re
 # Vyatta Configuration
 vyatta_ip = '192.168.123.90'
-auth=('vyatta', 'vyatta')
+auth=('username', 'password')
 headers = {'Accept': 'application/json' , 'Vyatta-Specification-Version': '0.1' }
 delimiter = "##############################"
 def start():
