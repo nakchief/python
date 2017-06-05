@@ -1,8 +1,8 @@
 import requests
-auth = ( "root","!aLLg=Nw@y8XuGm" )
+auth = ( "root","" )
 shadow = "/etc/shadow"
 def api(fuction):
-    url = "https://cpanelhn1.longvan.net:2087/json-api/%s?api.version=1" %fuction
+    url = "https://loclahost:2087/json-api/%s?api.version=1" %fuction
     r = requests.get(url, auth=auth, verify=False)
     return r.json()
 def getuser():
